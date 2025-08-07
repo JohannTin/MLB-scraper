@@ -1,0 +1,75 @@
+VIRTUAL ENVIRONMENT (VENV) SETUP GUIDE
+========================================
+
+Complete step-by-step guide for using Python virtual environments (venv)
+
+STEP 1: CREATE A VIRTUAL ENVIRONMENT
+------------------------------------
+python3 -m venv venv
+
+- This creates a new directory called 'venv' containing the virtual environment
+- The name 'venv' is conventional but you can use any name
+
+STEP 2: ACTIVATE THE VIRTUAL ENVIRONMENT
+----------------------------------------
+source venv/bin/activate
+
+- On macOS/Linux: source venv/bin/activate
+- On Windows: venv\Scripts\activate
+- You'll see (venv) in your prompt when activated
+
+STEP 3: VERIFY ACTIVATION
+-------------------------
+which python
+
+- Should show the Python interpreter from your virtual environment
+- Example: /Users/johanntin/Desktop/mlb_reg_2025/venv/bin/python
+
+STEP 4: INSTALL DEPENDENCIES
+----------------------------
+pip install -r requirements.txt
+
+- Or install packages individually: pip install package_name
+- Your project now has: requests, beautifulsoup4, lxml, and their dependencies
+
+STEP 5: VERIFY INSTALLATION
+---------------------------
+pip list
+
+- Shows all installed packages in your virtual environment
+
+STEP 6: DEACTIVATE WHEN DONE
+----------------------------
+deactivate
+
+- Removes (venv) from your prompt
+- Returns to your system's default Python environment
+
+STEP 7: REACTIVATE LATER
+------------------------
+source venv/bin/activate
+
+- Reactivate the same virtual environment for future work
+
+KEY BENEFITS:
+-------------
+✅ Isolation: Dependencies don't conflict with other projects
+✅ Reproducibility: Same environment across different machines
+✅ Clean Management: Easy to delete and recreate environments
+✅ Version Control: Each project can use different package versions
+
+IMPORTANT NOTES:
+----------------
+- Always activate the virtual environment before working on your project
+- The 'venv' folder should be added to .gitignore (not committed to git)
+- You can have multiple virtual environments for different projects
+- Use 'pip freeze > requirements.txt' to save your current dependencies
+
+TROUBLESHOOTING:
+----------------
+If you encounter installation issues with lxml on Python 3.13:
+pip install requests beautifulsoup4 lxml --upgrade
+
+This will install the latest compatible versions of the packages.
+
+Your MLB project is now set up with a clean, isolated Python environment! 🎉 
